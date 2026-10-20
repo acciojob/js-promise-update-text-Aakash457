@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html>
-<body>
-    <p id="output">Waiting...</p>
+function createPromise() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Hello, world!");
+        }, 1000);
+    });
+}
 
-    <script src="./script.js"></script>
-</body>
-</html>
+createPromise().then((result) => {
+    document.getElementById("output").textContent = result;
+});
